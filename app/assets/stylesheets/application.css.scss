@@ -1,6 +1,4 @@
-
-
-@import 'normalize';
+@import '_normalize';
 
 // Colors
 $dark: #424652;
@@ -104,6 +102,11 @@ body {
 }
 
 
+.homepage_content h3 a {
+	text-decoration: none;
+	color: $dark;
+}
+
 // Footer 
 #main_footer {
 	padding: 2.5rem 5%;
@@ -163,5 +166,5 @@ input[type="submit"] {
 
 
 
-@import 'welcome';
-@import 'post_project';
+@import '_welcome';
+@import '_post_project';

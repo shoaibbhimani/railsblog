@@ -1,5 +1,40 @@
-<%= @post.title %> <br />
-<%= @post.content %>
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+		<header>
+			<div class="date"> <%= @post.created_at.strftime('%A, %B, %d') %>   </div>
+			<h1><%= @post.title %> <br /></h1>
+			<hr>
+		</header>
+
+		<div id="content">
+			<%= @post.content %>
+		</div>
+		<hr>
+	<div id="share_box">
+		<p>Share <%= @post.title %></p>
+		<a onclick="javascript:window.open('http://twitter.com/intent/tweet?text=<%= @post.title %> by @shoaibbhimani - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
+		<a href="#"><i class="fa fa-github"></i></a>
+		<a href="#"><i class="fa fa-dribbble"></i></a>
+	</div>
+	
+
+</div>
+	
+	
+	
+<div class="pagination">
+	<span class="previous_page disabled">
+		Previous
+	</span>
+	<em class="current">1</em>
+	<a rel="next" href="#">2</a>
+	<a href="#" class="next_page"> Next </a>
+</div>
+
+
+
+
+
+
 
 <%= link_to 'Edit', edit_post_path(@post) %>
 <%= link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: "Are you sure you wnat to delete this post?" } %>

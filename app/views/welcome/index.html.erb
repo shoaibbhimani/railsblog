@@ -1,0 +1,29 @@
+<div class="wrapper clearfix">
+	<div class="col-1 homepage_content">
+		<h2>About</h2>
+		<hr>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus et reiciendis molestiae corporis aliquam quos, quidem sit natus, <p>magnam sint, quam voluptatibus ipsum ab laudantium aut velit quibusdam cumque tenetur</p> </p>
+	</div>
+	<div class="col-2 homepage_content">
+		<h2>Stuff I have Writter</h2>
+		<hr>
+		<% @posts.each do |post|  %>
+			<h3>  <%= link_to post.title, post %>  </h3>
+			<p class="date"> <%= post.created_at.strftime('%A, %b %d') %> </p>
+		<% end  %>
+		
+	</div>
+	<div class="col-3 homepage_content">
+		<h2>Project I have Made</h2>
+		<hr>
+		<h3>Dummy Project #1</h3>
+		<p class="date">Friday April </p>
+		<h3>How do I Learn "X"</h3>
+		<p class="date">	  Thursday April 
+		</p>
+		<h3>Strive for the uncomfortable</h3>
+		<p class="date">
+		 Saturday March 
+		</p>
+	</div>
+</div>

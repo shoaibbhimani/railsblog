@@ -12,15 +12,24 @@
 
   <body>
   <header id="main_navigation" class="clearfix">
-			<a href="index.html" class="name">
-			Shoaib Bhimani
-			</a>
+	    <%= link_to "Shoaib Bhimani", root_path, class: "name" %>
 		<nav>
-		     <%= link_to "Articles", posts_path %>
+		    <%= link_to "Articles", posts_path %>
 			<a href="#">Project</a>
 			<a href="contact.html">Contact</a>
 		</nav>
 	</header>
     <%= yield %>
+
+    <footer id="main_footer">
+		<div class="copyright">
+			&copy; 2015 Shoaib Bhimani		 
+		</div>
+		 <nav>
+				<a href=""><i class="fa fa-twitter"></i></a>
+				<a href=""><i class="fa fa-github"></i></a>
+				<a href=""><i class="fa fa-youtube"></i></a>
+			</nav>
+	</footer>
   </body>
 </html>
