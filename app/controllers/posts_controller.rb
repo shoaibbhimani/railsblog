@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy ] 
 	#render List of Post
 	def index
+		@posts = Post.all
 	end
 
 	# render New Form Title and Content 
@@ -11,7 +12,7 @@ class PostsController < ApplicationController
 
 	# Actually create row in DataBase and save to it 
 	def create
-		@post = Post.new post_params
+		@post = Post.new(post_params)
 		if @post.save
 			redirect_to @post, notice: "Hello Shoaib You are article is created"
 		else
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
 
 	# Show Update Page
 	def update
-	  if @post.update post_params
+	  if @post.update(post_params)
 	  	redirect_to @post, notice: "Post is Edited"
 	  else
 	  	render 'edit'
@@ -39,7 +40,7 @@ class PostsController < ApplicationController
 	# Delete Post
 	def destroy
 		@post.destroy
-		redirect_to post_path
+		redirect_to posts_path
 	end
 
 
