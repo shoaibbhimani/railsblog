@@ -3,12 +3,24 @@
   <head>
     <title>Blog</title>
     <%= csrf_meta_tags %>
-
+	<title>Create Blog</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <header id="main_navigation" class="clearfix">
+			<a href="index.html" class="name">
+			Shoaib Bhimani
+			</a>
+		<nav>
+		     <%= link_to "Articles", posts_path %>
+			<a href="#">Project</a>
+			<a href="contact.html">Contact</a>
+		</nav>
+	</header>
     <%= yield %>
   </body>
 </html>
