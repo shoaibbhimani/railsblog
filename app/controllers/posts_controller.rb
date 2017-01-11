@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy ] 
 	#render List of Post
 	def index
-		@posts = Post.all
+		@posts = Post.all.order("created_at desc").paginate(:page => params[:page], :per_page => 2)
 	end
 
 	# render New Form Title and Content 
