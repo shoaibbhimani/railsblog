@@ -1,0 +1,40 @@
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+		<header>
+			<div class="date"> <%= @project.created_at.strftime('%A, %B, %d') %>   </div>
+			<h1><%= @project.title %> <br /></h1>
+			<hr>
+		</header>
+
+		<div id="content">
+			<%= markdown @project.description %>
+		</div>
+		<div id="link">
+			
+		<a href="<%= @project.link %>" class="project_button" target="_blank">Visit <%= @project.title %> </a>
+		</div>
+		<hr>
+
+
+	<div id="share_box">
+		<p>Share <%= @project.title %></p>
+		<a onclick="javascript:window.open('http://twitter.com/intent/tweet?text=<%= @project.title %> by @shoaibbhimani - &amp;url=<%= url_for([@project, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
+		<a href="#"><i class="fa fa-github"></i></a>
+		<a href="#"><i class="fa fa-dribbble"></i></a>
+	</div>
+	
+
+</div>
+	
+<%= render 'disqus' %>
+
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_project_path(@project) %>
+<%= link_to 'Destroy', project_path(@project), method: :delete, data: { confirm: "Are you sure you wnat to delete this project?" } %>
+<%= link_to 'Time pass', project_path(@project), method: :timepass %>
